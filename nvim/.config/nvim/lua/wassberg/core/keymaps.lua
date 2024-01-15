@@ -9,7 +9,7 @@ end
 vim.g.mapleader = ' '
 
 map('n', '<C-a>', 'gg<S-v>G')
-map('n', '<Space>x', ':q <cr>')
+map('n', '<Space>q', ':q <cr>')
 map('n', '<Space>w', ':w <cr>')
 
 map('n', 'ss', ':split<Return><C-w>w')

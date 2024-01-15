@@ -14,6 +14,17 @@ return {
 
     local keymap = vim.keymap -- for conciseness
 
+    local border = {
+          {"🭽", "FloatBorder"},
+          {"▔", "FloatBorder"},
+          {"🭾", "FloatBorder"},
+          {"▕", "FloatBorder"},
+          {"🭿", "FloatBorder"},
+          {"▁", "FloatBorder"},
+          {"🭼", "FloatBorder"},
+          {"▏", "FloatBorder"},
+    }
+
     local opts = { noremap = true, silent = true }
     local on_attach = function(client, bufnr)
       opts.buffer = bufnr
@@ -41,7 +52,7 @@ return {
       keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
 
       opts.desc = "Show buffer diagnostics"
-      keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
+      keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts, border) -- show  diagnostics for file
 
       opts.desc = "Show line diagnostics"
       keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
